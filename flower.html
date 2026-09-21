@@ -6,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/main.css" />
     <link rel="icon" href="img/flowers.png" type="image/x-icon" />
-    <title>Flower</title>
+    <title>Para Lumi 🌻</title>
   </head>
   <body class="container">
-    <audio src="sound/ChristianBasso&HaienQiu-Flowers.mp3" autoplay></audio>
+    <audio id="song" src="sound/ChristianBasso&HaienQiu-Flowers.mp3" playsinline preload="auto"></audio>
     <div id="lyrics">
      
     </div>
-    <h1 class="titulo">Estas flores amarillas son un reflejo de la alegría que traes a mi vida. <br> <br>
-      Gracias por iluminar mis días con tu presencia.</h1>
+    <h1 class="titulo">Lumi: estas flores amarillas son un reflejo de la alegría que traes a mi vida. <br> <br>
+      Gracias por iluminar mis días con tu presencia. Te amo 💛</h1>
   
     <div class="night"></div>
     <div class="flowers">
@@ -328,5 +328,20 @@
     </div>
     <script src="anim.js"></script>
     <script src="main.js"></script>
+    <script>
+      // En móviles el autoplay está bloqueado: la música inicia con el primer toque.
+      (function () {
+        var audio = document.getElementById("song");
+        audio.volume = 0.7;
+        function unlock() {
+          audio.play().catch(function () {});
+        }
+        ["touchstart", "pointerdown", "click", "keydown"].forEach(function (evt) {
+          window.addEventListener(evt, unlock, { once: true, passive: true });
+        });
+        var attempt = audio.play();
+        if (attempt) attempt.catch(function () {});
+      })();
+    </script>
   </body>
 </html>

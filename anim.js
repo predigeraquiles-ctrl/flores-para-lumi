@@ -22,6 +22,7 @@ var lyricsData = [
   { text: "Too much light for twilight", time: 104 },
   { text: "In the mood for the flowers love", time: 108 },
   { text: "At the time", time: 144 },
+  { text: "Lumi.", time: 141.5 },
   { text: "The whisper of birds", time: 148 },
   { text: "Lonely before the sun cried", time: 153 },
   { text: "Fell from the sky", time: 158 },
@@ -30,7 +31,7 @@ var lyricsData = [
   { text: "Nice butterflies in my hands", time: 176 },
   { text: "Too much light for twilight", time: 183 },
   { text: "In the mood for the flowers", time: 188 },
-  { text: "Love.", time: 140 },
+  { text: "Love.", time: 139 },
 ];
 
 // Animar las letras
